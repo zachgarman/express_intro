@@ -68,6 +68,7 @@ app.delete('/songs', function(req, res) {
       songs.splice(i, 1);
     }
   }
+  res.send(songs);
 });
 
 app.get('/songs', function(req, res) {

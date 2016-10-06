@@ -18,6 +18,10 @@ td, th {
 tr:nth-child(2n) {
   background-color: #cccccc;
 }
+tr:nth-child(2n+1) {
+  background-color: white;
+}
+
 th {
   background-color: black;
   color: white;
@@ -41,9 +45,19 @@ button:hover {
   color: white;
 }
 form {
-  background-color: white;
+  background-color: red;
+  font-size: 22px;
+
 }
 h1, h2 {
+  text-shadow: 2px 2px black;
+  color: darkslategray;
+  background-color: red;
+  text-decoration: underline;
+}
+h1 {
+  font-size: 5em;
+}
+h2 {
   font-size: 2em;
-  text-shadow: 1px 1px red;
 }
