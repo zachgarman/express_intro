@@ -38,6 +38,7 @@ app.get('/kittens', function (req, res) {
 });
 
 var songs = [];
+//each new song gets a unique songTracker number to make deleting it easier.
 var songTracker = 0;
 app.post('/songs', function (req, res) {
 
@@ -48,20 +49,24 @@ app.post('/songs', function (req, res) {
       unique = false;
     }
   });
-
+  //If no song matches exist, unique is true, and this song is added to /songs
   if (unique) {
     var date = new Date;
+    //every new song gets a new unique songTracker 
     songTracker++;
     req.body.date = date.toDateString();
     req.body.index = songTracker;
     req.body.remover = '<button id="' + songTracker + '">Remove</button>';
     songs.push(req.body);
     res.sendStatus(200);
+  //Otherwise, send this error code which I can't get to work on the client side.
   } else {
     res.sendStatus(400);
   }
 });
 
+//This function loops through all the existing songs and deletes the one
+//with a matching value in index
 app.delete('/songs', function(req, res) {
   for (var i = 0; i < songs.length; i++) {
     if (songs[i]['index'] == req.body.index) {

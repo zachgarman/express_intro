@@ -2,6 +2,8 @@ body {
   margin-left: 50px;
   background-image: url("../images/background.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 50px;
 }
 p, h2, form, input {
   display: inline;
@@ -45,18 +47,18 @@ button:hover {
   color: white;
 }
 form {
-  background-color: red;
+  background-color: yellowgreen;
   font-size: 22px;
 
 }
 h1, h2 {
-  text-shadow: 2px 2px black;
-  color: darkslategray;
-  background-color: red;
+  text-shadow: -2px 2px black;
+  color: yellowgreen;
   text-decoration: underline;
 }
 h1 {
   font-size: 5em;
+  margin-top: -10px;
 }
 h2 {
   font-size: 2em;

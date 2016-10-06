@@ -30,7 +30,8 @@ $(function () {
 
 
 });
-
+//Sends an object to the server.js file for deletion.  Also calls getSongs to
+//reflect changes on the client side.
 function removeSongs(deleteObj) {
   $.ajax({
     type: 'DELETE',
@@ -42,14 +43,14 @@ function removeSongs(deleteObj) {
   });
 }
 
-
+//This function gets all the songs in the /songs url and fills in a table
 function getSongs() {
   $.ajax({
     type: 'GET',
     url: '/songs',
     statusCode: {
       400: function () {
-        console.log('nope');
+        console.log('nope');      //this does not work.  Neither did error
       }
     },
     success: function(songs) {
