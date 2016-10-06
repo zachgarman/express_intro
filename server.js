@@ -49,10 +49,15 @@ app.post('/songs', function (req, res) {
       unique = false;
     }
   });
+
+  if (req.body.artist.trim() == '' || req.body.title.trim() == '') {
+    unique = 'nothing';
+  }
+
   //If no song matches exist, unique is true, and this song is added to /songs
-  if (unique) {
+  if (unique === true) {
     var date = new Date;
-    //every new song gets a new unique songTracker 
+    //every new song gets a new unique songTracker
     songTracker++;
     req.body.date = date.toDateString();
     req.body.index = songTracker;
@@ -60,6 +65,8 @@ app.post('/songs', function (req, res) {
     songs.push(req.body);
     res.sendStatus(200);
   //Otherwise, send this error code which I can't get to work on the client side.
+  } else if (unique == 'nothing') {
+    res.sendStatus(418);
   } else {
     res.sendStatus(400);
   }

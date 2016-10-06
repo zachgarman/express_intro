@@ -12,7 +12,19 @@ $(function () {
       type: 'POST',
       url: '/songs',
       data: formData,
-      success: getSongs
+      statusCode: {
+        400: function () {
+          alert('Someone else got here first!\nTry again!');      //this does not work.  Neither did error
+        },
+        418: function () {
+          alert('You can\'t do a blank song you dummy!');
+        }
+      },
+      success: getSongs,
+      // error: function() {
+      //   alert("That is totally unacceptable! \nTry again!");
+      // }
+
     });
 
     $(this).find('input[type=text]').val('');
@@ -48,11 +60,7 @@ function getSongs() {
   $.ajax({
     type: 'GET',
     url: '/songs',
-    statusCode: {
-      400: function () {
-        console.log('nope');      //this does not work.  Neither did error
-      }
-    },
+
     success: function(songs) {
       $('#songs').empty();
       songs.forEach(function(song) {
