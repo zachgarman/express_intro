@@ -17,7 +17,7 @@ $(function () {
           alert('Someone else got here first!\nTry again!');      //this does not work.  Neither did error
         },
         418: function () {
-          alert('You can\'t do a blank song you dummy!');
+          alert('You can\'t leave blanks, you dummy!');
         }
       },
       success: getSongs,
