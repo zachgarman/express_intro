@@ -1,0 +1,49 @@
+body {
+  margin-left: 50px;
+  background-image: url("../images/background.png");
+  background-size: cover;
+}
+p, h2, form, input {
+  display: inline;
+  margin-right: 15px;
+}
+table, th, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td, th {
+  min-width: 200px;
+  padding: 10px 5px 10px 5px;
+}
+tr:nth-child(2n) {
+  background-color: #cccccc;
+}
+th {
+  background-color: black;
+  color: white;
+  font-size: 26px;
+}
+table {
+  margin-top: 30px;
+}
+td:last-child {
+  text-align: center;
+  padding: 0;
+}
+button {
+  height: 100%;
+  width:100%;
+  background-color: lightslategray;
+  font-size: 18px;
+}
+button:hover {
+  background-color: darkslategray;
+  color: white;
+}
+form {
+  background-color: white;
+}
+h1, h2 {
+  font-size: 2em;
+  text-shadow: 1px 1px red;
+}

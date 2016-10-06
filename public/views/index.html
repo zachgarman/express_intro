@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Greatest Songs Ever!</title>
+        <!-- this gets translated to localhost:3000/js/client.js -->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="js/client.js"></script>
+
+    <link href="styles/styles.css" rel="stylesheet"/>
+
+  </head>
+  <body>
+    <h1>Favorite Songs</h1>
+      <h2>Add a new song:</h2>
+    <form>
+      <label>Title</label>
+      <input type="text" name="title" required/>
+
+      <label>Artist:</label>
+      <input type="text" name="artist" required/>
+
+      <input type="submit" />
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Date Added</th>
+          <th>Remove?</th>
+        </tr>
+      </thead>
+      <tbody id='songs'>
+
+      </tbody>
+
+    </table>
+
+
+
+  </body>
+</html>
